@@ -32,6 +32,8 @@ requiring only a few minutes to create a New Year's card and push the send butto
 
 `mqtt-nenga` has developed as a prototype to provide a solution to the problems that Japanese people face at the end of the year.
 
+You need more information? Articles [Here: (Japanese)MQTTと電子ペーパーを使って年賀状を作る](https://blog.tubone-project24.xyz/2021/01/01/mqtt-nenga)
+
 ### Architecture
 
 It uses React with [React Hooks](https://reactjs.org/docs/hooks-intro.html) as the front-end framework, [Tailwind CSS](https://tailwindcss.com/) as the CSS framework, and calls APIs to the back-end server as SPA.
