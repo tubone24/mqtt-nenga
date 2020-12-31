@@ -34,7 +34,7 @@ requiring only a few minutes to create a New Year's card and push the send butto
 
 ### Architecture
 
-It uses React (with (React Hooks)[https://reactjs.org/docs/hooks-intro.html]) as the front-end framework, [Tailwind CSS](https://tailwindcss.com/) as the CSS framework, and calls APIs to the back-end server as SPA.
+It uses React with [React Hooks](https://reactjs.org/docs/hooks-intro.html) as the front-end framework, [Tailwind CSS](https://tailwindcss.com/) as the CSS framework, and calls APIs to the back-end server as SPA.
 
 The backend server also serves as the [MQTT](https://mqtt.org/) publisher, providing APIs to the frontend, as well as front-hosting and creating New Year's card images using [Pillow](https://pillow.readthedocs.io/en/stable/), and publishing to the MQTT broker using [paho](https://www.eclipse.org/paho/index.php?page=clients/python/index.php).
 
