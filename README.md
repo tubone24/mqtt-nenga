@@ -4,6 +4,7 @@
 
 [![license](https://img.shields.io/github/license/tubone24/mqtt-nenga.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+[![.github/workflows/build_image.yml](https://github.com/tubone24/mqtt-nenga/workflows/.github/workflows/build_image.yml/badge.svg)](https://github.com/tubone24/mqtt-nenga/actions?query=workflow%3A.github%2Fworkflows%2Fbuild_image.yml)
 
 > Sending a NENGA (New Year's card) to someone far away... With MQTT
 
@@ -73,6 +74,20 @@ This tool used by Make, NPM, Python and Docker.
 So, Install those apps before run [this tool](https://github.com/tubone24/mac-auto-setup).
 
 ### Quick Install
+
+- Docker pull on your environment
+
+```
+docker pull docker.pkg.github.com/tubone24/mqtt-nenga/backend:latest
+
+docker pull docker.pkg.github.com/tubone24/mqtt-nenga/mqtt-broker:latest
+
+docker run -d --rm -p 1883:1883 -p 8080:8080 --name mqtt_broker docker.pkg.github.com/tubone24/mqtt-nenga/mqtt-broker
+
+docker run --rm -it -p 8000:8000 -e MQTT_HOST="127.0.0.1" --name mqtt_nenga_backend docker.pkg.github.com/tubone24/mqtt-nenga/backend
+```
+
+### Build your environment
 
 - With my [mac-auto-setup](https://github.com/tubone24/mac-auto-setup), you can build the environment you need for your Mac.
 
