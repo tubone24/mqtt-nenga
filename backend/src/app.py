@@ -5,6 +5,7 @@ from io import BytesIO
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 import paho.mqtt.client as paho
 
 from PIL import Image, ImageDraw, ImageFont
@@ -28,6 +29,8 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
+
+app.mount("/app", StaticFiles(directory="app"), name="app")
 
 
 class Message(BaseModel):

@@ -9,6 +9,7 @@ RUN apk add --no-cache build-base freetype-dev fribidi-dev harfbuzz-dev jpeg-dev
  && apk del build-base
 
 COPY backend/src ./src/
+COPY front/nenga/build ./src/app/
 COPY font/ipamp.ttf ./font/
 EXPOSE 8000
 # FastAPIを8000ポートで待機
