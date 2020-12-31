@@ -1,0 +1,30 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: build Docker image
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Nodev12
+        - uses: actions/setup-node@v2
+          with:
+            node-version: '12'
+      - name: docker login
+        run: docker login docker.pkg.github.com -u tubone24 -p ${{ secrets.GITHUB_TOKEN }}
+      - name: docker backend build
+        run: make build
+      - name: docker tag change backend
+        run: docker tag mqtt_nenga_backend docker.pkg.github.com/tubone24/mqtt-nenga/backend
+      - name: docker push backend
+        run: docker push docker.pkg.github.com/tubone24/mqtt-nenga/backend
+      - name: docker MQTT broker build
+        run: make build-broker
+      - name: docker tag change MQTT broker
+        run: docker tag mqtt_broker docker.pkg.github.com/tubone24/mqtt-nenga/mqtt-broker
+      - name: docker push MQTT broker
+        run: docker push docker.pkg.github.com/tubone24/mqtt-nenga/mqtt-broker
