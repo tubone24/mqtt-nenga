@@ -32,7 +32,7 @@ requiring only a few minutes to create a New Year's card and push the send butto
 
 `mqtt-nenga` has developed as a prototype to provide a solution to the problems that Japanese people face at the end of the year.
 
-### Architects
+### Architecture
 
 It uses React (with (React Hooks)[https://reactjs.org/docs/hooks-intro.html]) as the front-end framework, [Tailwind CSS](https://tailwindcss.com/) as the CSS framework, and calls APIs to the back-end server as SPA.
 
@@ -124,7 +124,7 @@ nohup python sub.py 127.0.0.1 &
 
 ### People who want to send New Year's cards
 
-- Access the Webpage.
+- Access the Web page. (default <http://localhost:8000/app/index.html>)
 
 ![web-1](./docs/images/web-1.png)
 
