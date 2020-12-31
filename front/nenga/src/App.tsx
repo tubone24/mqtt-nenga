@@ -104,7 +104,7 @@ export const App: React.FC = () => {
                         </div>
                     </div>
                     <div className="bg-light-blue-300 py-6">
-                        <img className="object-scale-down h-48 w-full " src={previewImage}  alt="preview image"/>
+                        <img className="object-scale-down h-48 w-full " src={previewImage}  alt="preview"/>
                     </div>
                     <div className="col-span-2 text-right">
                         <button onClick={handlePreview} className="w-1/2 px-4 py-3 text-center bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-black font-bold rounded-lg text-sm">Preview

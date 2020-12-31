@@ -18,6 +18,8 @@ jobs:
         run: docker login docker.pkg.github.com -u tubone24 -p ${{ secrets.GITHUB_TOKEN }}
       - name: docker backend build
         run: make build
+        env:
+          -
       - name: docker tag change backend
         run: docker tag mqtt_nenga_backend docker.pkg.github.com/tubone24/mqtt-nenga/backend
       - name: docker push backend
