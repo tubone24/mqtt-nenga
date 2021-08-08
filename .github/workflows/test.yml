@@ -1,0 +1,22 @@
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: build Docker image
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Nodev12
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - name: docker login
+        run: docker login docker.pkg.github.com -u tubone24 -p ${{ secrets.GITHUB_TOKEN }}
+      - name: docker backend build
+        run: make build
+      - name: docker MQTT broker build
+        run: make build-broker
